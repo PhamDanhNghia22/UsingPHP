@@ -2,7 +2,7 @@
 session_start();
 require './vendor/autoload.php';
 require_once './app/Brigde.php';
-// Đường dẫn admin: /autoload/app/admin/index.php;
+// Đường dẫn admin: /UsingPHP/app/admin/index.php;
 
     
 
