@@ -1,0 +1,271 @@
+*{
+    padding: 0;
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+header{
+    background-color: #111;
+    min-height: 450px;
+    position: relative;
+}
+
+.ad{
+    color: red;
+}
+
+/* Menu */
+
+.menu{
+    display: flex;
+    padding-top: 30px;
+    padding-left: 90px;
+    color: white;
+}
+.menu .menu-item-brand{
+    font-size: 30px;
+    padding-bottom: 25px;
+    text-transform: none;
+    padding-left:70px ;
+    padding-right: 40%;
+
+}
+.menu .menu-item-brand a{
+    text-decoration: none;
+    color:white
+}
+
+.menu .menu-item{
+    font-size: 15px;
+    padding-top: 17px;
+    padding-right: 25px;
+}
+
+.menu li{
+    list-style: none;
+    float: left;
+    margin-left: 20px;
+}
+
+.menu .menu-item a{
+    text-decoration: none;
+    color: white;
+    text-transform: capitalize;
+}
+
+/* Banner */
+.banner .banner-card{
+    width: 30%;
+    /* border: 1px solid white; */
+    margin: 50px 0px 0px 170px;
+    padding-bottom: 80px;
+
+}
+
+.banner .banner-card .banner-title{
+    font-size: 70px;
+    color: white;
+    margin-bottom: 30px;
+
+}
+
+.banner .banner-card .banner-content{
+    margin-bottom: 30px;
+}
+.banner .banner-card .banner-content p{
+    font-size: 20px;
+    color: darkcyan;
+
+}
+
+.banner .banner-card .banner-button{
+    text-decoration: none;
+    text-transform: uppercase;
+    background-color: #FFBB00;
+    color:#111;
+    padding: 15px;
+    border-radius: 2px;
+    font-weight: 500;
+}
+
+
+.banner .banner-img{
+    /* border:1px solid black; */
+    width: 30%;
+    min-height: 100%;
+    position: absolute;
+    right: 320px;
+    top: 100px;
+    /* bottom: 0px; */
+    
+}
+
+/* Main */
+
+.main .main-title{
+    margin-top: 150px;
+    margin-left: 150px;
+}
+
+
+
+/* .product{
+    
+} */
+
+/* .product .product-card{
+    width: 360px;
+    margin-right: 45px;
+    text-decoration: none;
+} */
+
+
+.product .product-card .product-card-img{
+    width: 360px;
+}
+
+.product .product-card .product-card-img img{
+    width: 100%;
+}
+
+.product .product-card .product-card-title span{
+    color: #111;
+    text-transform: capitalize;
+    font-weight: 500;
+    font-size: 20px;
+    margin-left: 20px;
+}
+.product .product-card .product-card-price span{
+    color: darkgray;
+    text-transform: capitalize;
+    font-size: 10px;
+    margin-left: 20px;
+    
+}
+
+/* Main Post */
+.main-post{
+    min-height: 500px;
+    background-color: #111;
+    margin-top: 150px;
+    margin-bottom: 200px;
+    position: relative;
+    
+}
+.post-card {
+    width: 30%;
+    padding-top: 50px;
+    margin-left: 200px;
+}
+
+.post-card .post-cate{
+    color: darkgray;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+}
+
+.post-card .post-title h3{
+    color: white;
+    font-size: 45px;
+    margin-bottom: 20px;
+
+}
+.post-card .post-content{
+    /* width: 50%; */
+    margin-bottom: 20px;
+    
+
+}
+
+.post-card .post-content span{
+    color: #B3B3B3;
+    font-size: 21px;
+    
+}
+
+.post-card .post-link{
+    color:#FFBB00;
+    font-size: 21px;
+}
+
+.post-img{
+    width:38%;
+    position: absolute;
+    right: 10%;
+    bottom: -10%;
+    
+
+}
+
+.post-dif{
+    width: 50%;
+    display: flex;
+    margin-left: 10%;
+    padding: 50px;
+    
+}
+
+.post-dif .post-dif-left{
+    width: 30%;
+    margin-right: 30px;
+}
+.post-dif .post-dif-left .post-dif-title{
+    margin-bottom: 20px;
+
+}
+
+.post-dif .post-dif-left .post-dif-title h4{
+    color: white;
+}
+
+.post-dif .post-dif-left .post-dif-content span{
+    color: #B3B3B3;
+    font-size: 15px;
+}
+
+.post-dif .post-dif-right{
+    width: 50%;
+}
+.post-dif .post-dif-right .post-dif-title{
+    margin-bottom: 20px;
+
+}
+
+.post-dif .post-dif-right .post-dif-title h4{
+    color: white;
+}
+
+.post-dif .post-dif-right .post-dif-content span{
+    color: #B3B3B3;
+    font-size: 15px;
+}
+
+footer{
+    background-color: #111;
+    height: 292px;
+    display: flex;
+}
+
+footer .footer-brand a{
+    text-decoration: none;
+    color:white;
+    font-size: 30px;
+    padding: 50px;
+}
+
+footer .contact{
+    width: 15%;
+}
+
+footer .contact li{
+    list-style: none;
+    color: #B3B3B3;
+    font-size: 15px;
+}
+
+footer .contact .contact-title h4{
+    color: white;
+    text-transform: uppercase;
+
+}
+
+
