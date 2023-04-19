@@ -79,6 +79,48 @@ if(isset($_GET["act"])){
             $listCate = $Cate->List_Cate();
             include_once 'Views/Product/AddProduct.php';
         break;
+
+        case 'ListProduct':
+
+            $listProd = $Prod->List_Product();
+            include_once 'Views/Product/ListProduct.php';
+        break;
+
+        case 'EditProduct':
+            if(isset($_GET['id'])){
+                $id = $_GET['id'];
+                $Eprod = $Prod->Edit_Product($id);
+            }
+            $listCate = $Cate->List_Cate();
+            $listProd = $Prod->List_Product();
+            include_once 'Views/Product/EditProduct.php';
+        break;
+        case 'UpdateProduct':
+            if(isset($_POST['submit_prod'])){
+                $id = $_POST['id'];
+                $nameprod = $_POST['nameprod'];
+                $price = $_POST['price'];
+                $des = $_POST['des'];
+                $category_id = $_POST['category_id'];
+                $status = $_POST['status'];
+                $img = $_FILES['img']['name'];
+                $target_dir = "../public/upload/";
+                $target_file = $target_dir . basename($_FILES["img"]["name"]);
+                if (move_uploaded_file($_FILES["img"]["tmp_name"], $target_file)) {
+                    // echo "The file ". htmlspecialchars( basename( $_FILES["img"]["name"])). " has been uploaded.";
+                } else {
+                    // echo "Sorry, there was an error uploading your file.";
+                }
+                $Prod->Update_Product($id,$nameprod,$price,$img,$des,$status,$category_id);
+                return 1;
+                
+            }
+
+            $listCate = $Cate->List_Cate();
+            $listProd = $Prod->List_Product();
+            include_once 'Views/Product/EditProduct.php';
+            
+        break;
     }
 }
 include_once 'Views/footer.php';

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 19, 2023 at 01:47 PM
+-- Generation Time: Apr 19, 2023 at 09:05 PM
 -- Server version: 10.4.27-MariaDB
 -- PHP Version: 8.1.12
 
@@ -66,7 +66,7 @@ CREATE TABLE `category` (
 
 INSERT INTO `category` (`id`, `name`, `status`, `parent_id`) VALUES
 (6, 'Xe đạp', 0, 0),
-(7, 'Xe đạp địa hình', 0, 6);
+(7, 'Xe đạp thể thao', 0, 6);
 
 -- --------------------------------------------------------
 
@@ -75,12 +75,12 @@ INSERT INTO `category` (`id`, `name`, `status`, `parent_id`) VALUES
 --
 
 CREATE TABLE `products` (
-  `id` int(11) NOT NULL,
-  `name` varchar(200) NOT NULL,
+  `id_prod` int(11) NOT NULL,
+  `name_prod` varchar(200) NOT NULL,
   `price` float NOT NULL,
   `img` varchar(255) NOT NULL,
   `description` text NOT NULL,
-  `status` tinyint(4) NOT NULL DEFAULT 4,
+  `status_prod` tinyint(4) NOT NULL DEFAULT 4,
   `cate_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
@@ -88,8 +88,9 @@ CREATE TABLE `products` (
 -- Dumping data for table `products`
 --
 
-INSERT INTO `products` (`id`, `name`, `price`, `img`, `description`, `status`, `cate_id`) VALUES
-(30, 'xe dap dia hinh 17', 1800000, 'bicicleta1.png', '<ul>\r\n	<li>xe dap dia hinh&nbsp;</li>\r\n</ul>\r\n', 0, 7);
+INSERT INTO `products` (`id_prod`, `name_prod`, `price`, `img`, `description`, `status_prod`, `cate_id`) VALUES
+(30, 'xe dap dia hinh 17', 1800000, 'bicicleta1.png', '<ul>\r\n	<li>xe dap dia hinh&nbsp;</li>\r\n</ul>\r\n', 0, 7),
+(32, 'xe dap dia hinh 16', 130000, 'bicicleta2.png', '<ul>\r\n	<li>Xe đạp địa h&igrave;nh</li>\r\n</ul>\r\n', 0, 7);
 
 -- --------------------------------------------------------
 
@@ -129,7 +130,7 @@ ALTER TABLE `category`
 -- Indexes for table `products`
 --
 ALTER TABLE `products`
-  ADD PRIMARY KEY (`id`),
+  ADD PRIMARY KEY (`id_prod`),
   ADD KEY `cate_id` (`cate_id`);
 
 --
@@ -158,7 +159,7 @@ ALTER TABLE `category`
 -- AUTO_INCREMENT for table `products`
 --
 ALTER TABLE `products`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
+  MODIFY `id_prod` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
 
 --
 -- Constraints for dumped tables

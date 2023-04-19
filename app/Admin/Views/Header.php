@@ -121,7 +121,7 @@
                     <li class="has_sub">
                         <a href="javascript:void(0);" class="waves-effect"><i class="mdi mdi-invert-colors"></i> <span> SẢN PHẨM</span> <span class="menu-arrow"></span></a>
                         <ul class="list-unstyled">
-                            <li><a href="/admin/show-product">Liệt kê</a></li>
+                            <li><a href="../admin/index.php?act=ListProduct">Liệt kê</a></li>
                             <li><a href="../admin/index.php?act=addProduct">Thêm sản phẩm</a></li>
 
                         </ul>
