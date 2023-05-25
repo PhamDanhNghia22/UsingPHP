@@ -1,7 +1,7 @@
 <?php
 
-include_once './Model/Config.php';
-
+// include_once './Model/Config.php';
+namespace App\Clients\Model;
 class Category{
     protected $db;
     public function __Construct(){
@@ -10,7 +10,7 @@ class Category{
     }
 
     public function getCate(){
-        $sql = "select * from categories";
+        $sql = "select * from category";
         $result = $this->db->pdo_query($sql);
         return $result;
     }

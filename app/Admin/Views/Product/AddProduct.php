@@ -52,6 +52,17 @@
                                                         </select>
                                                 </div>
                                                 <div class="form-group">
+                                                    <label for="userName">Nổi bật<span class="text-danger">*</span></label><br>    
+                                                           <select style="width: 140px;height: 30px;border-radius:4px;text-align:center;font-size:15px" class="form-select" id="noibat"  name="noibat" aria-label="Default select example">
+                                                            <option value="0">Hiện</option>    
+                                                            <option value="1">Ẩn</option>                                                    
+                                                          <!-- @if($errors->has('status'))
+                                                          <strong style="color:red;font-size:18px;background-color: #FCE77D">{{ $errors->first('status') }}</strong>
+                                                          @endif  -->
+                                                          
+                                                        </select>
+                                                </div>
+                                                <div class="form-group">
                                                     <label for="userName">Category_id<span class="text-danger">*</span></label><br>    
                                                            <select style="width: 140px;height: 30px;border-radius:4px;text-align:center;font-size:15px" class="form-select" id="category_id" name="category_id" aria-label="Default select example">
                                                             <?php 
@@ -80,7 +91,7 @@
                                                     <button id="submit_prod" name="submit_prod"  class="btn btn-primary waves-effect waves-light" type="submit">
                                                         Thêm
                                                     </button>
-                                                    <button class="btn btn-danger btn-sm" style="height:34px"><a href="../admin/index.php?act=listCategory"   style="color:white;height:50px">Hủy bỏ</a></button>                                                            
+                                                    <button class="btn btn-danger btn-sm" style="height:34px"><a href="../admin/index.php?act=ListProduct"   style="color:white;height:50px">Hủy bỏ</a></button>                                                            
 
                                                 </div>
 
@@ -129,6 +140,7 @@
                 var price = $('#price').val();
                 var category_id = $('#category_id').val();
                 var status = $('#status').val();
+                var noibat = $('#noibat').val();
                 var submit_prod =$('#submit_prod').val();
 
                 form_Data.append('img', img[0]);
@@ -137,6 +149,7 @@
                 form_Data.append('des',des);
                 form_Data.append('status', status);
                 form_Data.append('category_id',category_id);
+                form_Data.append('noibat',noibat);
                 form_Data.append('submit_prod',submit_prod);
 
                 

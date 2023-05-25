@@ -1,7 +1,7 @@
 <?php
 // include_once './Model/Config.php';
-namespace App\Model;
-use App\Model\Config;
+namespace App\Clients\Model;
+use App\Clients\Model\Config;
 // require_once './Model/DbConnect';
 class Account extends DbConnect{
     protected $db;

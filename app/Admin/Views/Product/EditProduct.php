@@ -62,6 +62,24 @@
                                                         </select>
                                                 </div>
                                                 <div class="form-group">
+                                                    <label for="userName">Nổi bật<span class="text-danger">*</span></label><br>    
+                                                           <select style="width: 140px;height: 30px;border-radius:4px;text-align:center;font-size:15px" class="form-select" id="noibat"  name="noibat" aria-label="Default select example">
+                                                            <?php 
+                                                                $status = array('0'=>'Hiện', '1'=>'Ẩn');
+                                                                foreach($status as $row => $item){
+                                                                    if($row==$Eprod['noibat']){
+                                                            ?>
+                                                                <option selected value="<?=$row?>"><?=$item?></option> 
+                                                            <?php }else{ ?>
+                                                                <option value="<?=$row?>"><?=$item?></option> 
+                                                            <?php }} ?>
+                                                               
+                                                                                                             
+                                                          
+                                                          
+                                                        </select>
+                                                </div>
+                                                <div class="form-group">
                                                     <label for="userName">Danh Mục<span class="text-danger">*</span></label><br>    
                                                         <select style="width: 140px;height: 30px;border-radius:4px;text-align:center;font-size:15px" class="form-select" id="category_id" name="category_id" aria-label="Default select example">
                                                                 <?php 
@@ -127,7 +145,7 @@
         CKEDITOR.replace('des')
         CKEDITOR.replace('des')
     </script>
-    <script>
+    <script type="text/javascript">
         $(document).ready(function (){
             $("#submit_prod").click(function (e){
                 e.preventDefault();
@@ -141,6 +159,7 @@
                 var price = $('#price').val();
                 var category_id = $('#category_id').val();
                 var status = $('#status').val();
+                var noibat = $('#noibat').val();
                 var submit_prod =$('#submit_prod').val();
 
                 form_Data.append('img', img[0]);
@@ -150,6 +169,7 @@
                 form_Data.append('des',des);
                 form_Data.append('status', status);
                 form_Data.append('category_id',category_id);
+                form_Data.append('noibat',noibat);
                 form_Data.append('submit_prod',submit_prod);
 
                 $.ajax({

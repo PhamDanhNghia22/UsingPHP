@@ -64,6 +64,7 @@ if(isset($_GET["act"])){
                 $des = $_POST['des'];
                 $category_id = $_POST['category_id'];
                 $status = $_POST['status'];
+                $noibat = $_POST['noibat'];
                 $img = $_FILES['img']['name'];
                 $target_dir = "../public/upload/";
                 $target_file = $target_dir . basename($_FILES["img"]["name"]);
@@ -72,7 +73,7 @@ if(isset($_GET["act"])){
                 } else {
                     // echo "Sorry, there was an error uploading your file.";
                 }
-                $Prod->Insert_product($nameprod,$price,$img,$des,$category_id,$status);
+                $Prod->Insert_product($nameprod,$price,$img,$des,$category_id,$status,$noibat);
                 return 1;
                 
             }
@@ -103,6 +104,7 @@ if(isset($_GET["act"])){
                 $des = $_POST['des'];
                 $category_id = $_POST['category_id'];
                 $status = $_POST['status'];
+                $noibat = $_POST['noibat'];
                 $img = $_FILES['img']['name'];
                 $target_dir = "../public/upload/";
                 $target_file = $target_dir . basename($_FILES["img"]["name"]);
@@ -111,7 +113,7 @@ if(isset($_GET["act"])){
                 } else {
                     // echo "Sorry, there was an error uploading your file.";
                 }
-                $Prod->Update_Product($id,$nameprod,$price,$img,$des,$status,$category_id);
+                $Prod->Update_Product($id,$nameprod,$price,$img,$des,$status,$category_id,$noibat);
                 return 1;
                 
             }
@@ -120,6 +122,15 @@ if(isset($_GET["act"])){
             $listProd = $Prod->List_Product();
             include_once 'Views/Product/EditProduct.php';
             
+        break;
+        case 'deleteProduct':
+            if(isset($_GET['id'])){
+                $id = $_GET['id'];
+                $Prod->deleteProduct($id);
+                
+            }
+            $listProd = $Prod->List_Product();
+            include_once 'Views/Product/ListProduct.php';
         break;
     }
 }

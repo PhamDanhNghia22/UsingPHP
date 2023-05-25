@@ -1,6 +1,7 @@
 <?php
 session_start();
-require './vendor/autoload.php';
+// header('Content-language: en-GB');
+require_once './vendor/autoload.php';
 require_once './app/Brigde.php';
 // Đường dẫn admin: /UsingPHP/app/admin/index.php;
 

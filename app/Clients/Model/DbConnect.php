@@ -1,5 +1,5 @@
 <?php
-namespace App\Model;
+namespace App\Clients\Model;
 use PDO;
 class DbConnect{
     private $servername = "mysql:host=localhost;dbname=mydb;charset=utf8";

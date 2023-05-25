@@ -75,7 +75,7 @@
                                                     <button id="submit_cate" name="submit_cate"  class="btn btn-primary waves-effect waves-light" type="submit">
                                                         Cập nhật
                                                     </button>
-                                                    <button class="btn btn-danger btn-sm" style="height:34px"><a href="/admin/show-category"   style="color:white;height:50px">Hủy bỏ</a></button>                                                            
+                                                    <button class="btn btn-danger btn-sm" style="height:34px"><a href="../admin/index.php?act=listCategory"   style="color:white;height:50px">Hủy bỏ</a></button>                                                            
 
                                                 </div>
 

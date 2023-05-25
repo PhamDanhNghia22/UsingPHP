@@ -1,7 +1,7 @@
 <?php
 // include_once './Model/DbConnect.php';
-namespace App\Model;
-use App\Model\DbConnect;
+namespace App\Clients\Model;
+use App\Clients\Model\DbConnect;
 use PDO;
 // require_once './Model/DbConnect.php';
 class Config extends DbConnect{
@@ -30,6 +30,7 @@ class Config extends DbConnect{
             $conn =parent::__Construct();
             $stmt = $this->conn->prepare($sql);
             $stmt->execute($sql_args);
+            // $result = $stmt->setFetchMode(PDO::FETCH_ASSOC);
             $rows = $stmt->fetchAll();
             return $rows;
         }catch(PDOException $e){

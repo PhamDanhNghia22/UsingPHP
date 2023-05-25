@@ -41,6 +41,7 @@
                                                         <th style="text-align: center;font-size:18px">Tên</th>
                                                         <th style="text-align: center;font-size:18px">Giá</th>
                                                         <th style="text-align: center;font-size:18px"> Trạng thái</th>
+                                                        <th style="text-align: center;font-size:18px">Nổi bật</th>
                                                         <th style="text-align: center;font-size:18px">Danh Mục</th>
                                                         <th style="text-align: center;font-size:18px">Action</th>
                                                         
@@ -69,11 +70,22 @@
                                                             
                                                                 
                                                             </th>
+                                                            <th style="text-align: center">
+                                                                <?php 
+                                                                    if($p['noibat']==0){
+                                                                ?>
+                                                                <button class="btn btn-success btn-sm">hiện</button>
+                                                                <?php }else{ ?>
+                                                                    <button class="btn btn-danger btn-sm">Ẩn</button>
+                                                                <?php } ?>
+                                                            
+                                                                
+                                                            </th>
                                                            
                                                             <th style="text-align: center"><?=$p['name']?></th>
                                                             <td class=" text-center font-size-10">
                                                                 <button class="btn btn-primary btn-sm " style="width:35px"><a href="../admin/index.php?act=EditProduct&id=<?=$p['id_prod']?>" class="text-gray m-r-5"><i style="color:white;padding-left:2px" class="ti-pencil"></i></a></button>
-                                                                <button class="btn btn-danger btn-sm" ><a href="../admin/index.php?act=DeleteCate&id=" id="delete" onclick="delete()"  class="text-gray "><i style="color:white" class="ti-trash "></i></a></button>
+                                                                <button class="btn btn-danger btn-sm"  ><a href="../admin/index.php?act=deleteProduct&id=<?=$p['id_prod']?>" id="delete" onclick="del(event,<?=$p['id_prod']?>)"  class="text-gray "><i style="color:white" class="ti-trash "></i></a></button>
                                                             </td> 
                                                         </tr>
                                                     
@@ -110,3 +122,32 @@
         </div>
         <script src="https://code.jquery.com/jquery-3.6.4.min.js" integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script type="text/javascript">
+    function del(event,id){
+        event.preventDefault();
+        Swal.fire({
+            title: 'Bạn có chắc không?',
+            text: "Bạn sẽ không thể trở lại ban đầu !",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Có, xóa nó!'
+        }).then((result) => {
+            if (result.isConfirmed) {
+                Swal.fire(
+                    'Xóa!',
+                    'Đã bị xóa',
+                    'Thành công'
+                ).then(()=>{
+                    window.location.href ='../admin/index.php?act=deleteProduct&id='+id;
+                })
+                // xóa
+                
+
+            }
+        })
+
+        
+    }
+</script>
